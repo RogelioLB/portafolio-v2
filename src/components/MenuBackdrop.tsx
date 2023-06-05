@@ -1,8 +1,8 @@
 import { useStore } from "@nanostores/react";
 import Hamburguer from "./Icons/Hamburguer";
 import { show } from "../stores/menuStore";
-import {BiBookAlt, BiHomeAlt2} from "react-icons/bi"
-import {CgProfile} from 'react-icons/cg'
+import {BiBookAlt, BiHomeAlt2} from "react-icons/bi/index"
+import {CgProfile} from 'react-icons/cg/index'
 import type { MouseEvent } from "react";
 
 export default function MenuBackdrop(){
