@@ -49,23 +49,14 @@ export default function ImagesProjects() {
         indexProject.set(i);
         const {offsetHeight,offsetLeft,offsetTop,offsetWidth} = item
         updateBar(offsetTop,offsetLeft,offsetWidth,offsetHeight);
-        imgs.forEach((img) => {
+        imgs.forEach((img, i) => {
           const image = img as HTMLImageElement;
-          const id = image.getAttribute("id");
-          if (id === item.getAttribute("data-id")) {
-            setValuesImages(image, 0, 0);
-            const restImages = Array.from(imgs).filter(
-              (image) => image.getAttribute("id") !== id
-            );
-            restImages.forEach((restImage, i) => {
-              const image = restImage as HTMLImageElement;
-              setValuesImages(image, i + 1, i + 1);
-            });
-          }
+          if(image.getAttribute("id") === item.getAttribute("data-id")) setValuesImages(image,0,0)
+          else setValuesImages(image, i+1, i+1);
         });
       });
     });
-  }, [index]);
+  }, []);
 
   return (
     <div className="flex max-sm:flex-col items-center gap-12">
@@ -78,7 +69,7 @@ export default function ImagesProjects() {
             id={image.id}
             src={image.url}
             alt={name}
-            className="transition-all rounded-md w-full aspect-video border-blue-500 border-2 absolute -bottom-[var(--bottom)] -right-[var(--right)] -z-[var(--index)]"
+            className="transition-all duration-500 rounded-md w-full aspect-video border-blue-500 border-2 absolute -bottom-[var(--bottom)] -right-[var(--right)] -z-[var(--index)]"
             key={image.id}
           />
         ))}
@@ -93,7 +84,7 @@ export default function ImagesProjects() {
             }
           <div
             id="mark"
-            className={`transition-all bg-gradient-to-r from-orange-500 to-orange-700 ease-in-out bg rounded-md absolute top-[var(--top)] left-[var(--left)] w-[var(--width)] h-[var(--height)]`}
+            className={`transition-all duration-500 bg-gradient-to-r from-orange-500 to-orange-700 ease-in-out bg rounded-md absolute top-[var(--top)] left-[var(--left)] w-[var(--width)] h-[var(--height)]`}
           ></div>
         </ul>
       </nav>
