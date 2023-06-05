@@ -8,7 +8,7 @@ module.exports = {
 				DEFAULT: '0px 4px 20px var(--tw-shadow-color)'
 			},
 			animation: {
-				marquee: 'marquee 10s linear infinite',
+				marquee: 'marquee 25s linear infinite',
 			  },
 			keyframes: {
 				marquee: {

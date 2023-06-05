@@ -5,14 +5,16 @@ import { useEffect } from "react";
 
 export default function ImagesProjects() {
   const projects = useStore(allProjects)
+  const index = useStore(indexProject)
 
   useEffect(() => {
-    const items = document.querySelectorAll("ul li");
+    const items = document.querySelectorAll("ul li") as NodeListOf<HTMLLIElement>;
     const imgs = document.querySelectorAll("#images img");
-    let initial = items[indexProject.get()];
+    let initial = items[index];
+    const {offsetHeight,offsetLeft,offsetTop,offsetWidth} = initial
     const mark = document.getElementById("mark");
-    const updateBar = ({ width, height, top, left }: DOMRect) => {
-      mark?.style.setProperty("--top", `${top}`);
+    const updateBar = (top:number,left:number,width:number,height:number) => {
+      mark?.style.setProperty("--top", `${top}px`);
       mark?.style.setProperty("--left", `${left}px`);
       mark?.style.setProperty("--width", `${width}px`);
       mark?.style.setProperty("--height", `${height}px`);
@@ -32,17 +34,21 @@ export default function ImagesProjects() {
       imageRef?.style.setProperty("--index", `${index}`);
     };
 
-    updateBar(initial.getBoundingClientRect());
+    updateBar(offsetTop,offsetLeft,offsetWidth,offsetHeight);
     imgs.forEach((img, i) => {
       const image = img as HTMLImageElement;
       setValuesImages(image, i, i);
     });
 
+    window.addEventListener("resize",()=>{
+      const {offsetHeight,offsetLeft,offsetTop,offsetWidth} = initial
+      updateBar(offsetTop,offsetLeft,offsetWidth,offsetHeight);
+    })
     items.forEach((item, i) => {
-      item.addEventListener("click", () => {
-        const rect = item.getBoundingClientRect();
+      item.addEventListener("click", (e) => {
         indexProject.set(i);
-        updateBar(rect);
+        const {offsetHeight,offsetLeft,offsetTop,offsetWidth} = item
+        updateBar(offsetTop,offsetLeft,offsetWidth,offsetHeight);
         imgs.forEach((img) => {
           const image = img as HTMLImageElement;
           const id = image.getAttribute("id");
@@ -59,30 +65,30 @@ export default function ImagesProjects() {
         });
       });
     });
-  }, []);
+  }, [index]);
 
   return (
-    <div className="flex flex-col items-center gap-12">
+    <div className="flex max-sm:flex-col items-center gap-12">
       <div
         id="images"
-        className="relative [&>img]:transition-all [&>img]:rounded-md w-64 [&>img]:w-64 [&>img]:aspect-video aspect-video [&>img]:border-blue-500 [&>img]:border-2"
+        className="flex-shrink-0 basis-[65%] w-[80%] relative aspect-video"
       >
         {projects.map(({ image, name }) => (
           <img
             id={image.id}
             src={image.url}
             alt={name}
-            className="absolute -bottom-[var(--bottom)] -right-[var(--right)] -z-[var(--index)]"
+            className="transition-all rounded-md w-full aspect-video border-blue-500 border-2 absolute -bottom-[var(--bottom)] -right-[var(--right)] -z-[var(--index)]"
             key={image.id}
           />
         ))}
       </div>
 
-      <nav className="bg-gray-800 rounded-md">
-        <ul className="flex [&>li]:relative [&>li]:z-10 [&>li]:text-xs [&>li]:py-4 [&>li]:px-2 rounded-md p-4 justify-between [&>li]:cursor-pointer">
+      <nav className="bg-gray-800 rounded-md w-full flex justify-center">
+        <ul className="flex max-sm:flex-row flex-col w-fit rounded-md p-4 justify-between">
             {
                 projects.map(({name,image:{id}})=>(
-                    <li data-id={`${id}`} key={id}>{name}</li>
+                    <li data-id={`${id}`} key={id} className="z-10 cursor-pointer max-sm:text-xs text-md py-2 px-4">{name}</li>
                 ))
             }
           <div

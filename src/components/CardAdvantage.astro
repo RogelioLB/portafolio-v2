@@ -8,6 +8,6 @@ const {text,title,delay} = Astro.props
 ---
 
 <div class=`flex flex-col gap-2 bg-black p-2 bg-opacity-40 backdrop-blur-sm rounded-md items-center animate-once animate-fade animate-delay-${delay}`>
-    <h4 class="text-sm text-orange-500 font-medium">{title}</h4>
-    <span class="text-xs text-white text-center">{text}</span>
+    <h4 class="max-sm:text-sm text-xl text-orange-500 font-medium">{title}</h4>
+    <span class="max-sm:text-xs text-md text-white text-center">{text}</span>
 </div>
