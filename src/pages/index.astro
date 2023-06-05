@@ -6,16 +6,23 @@ import SectionFullyCustomizable from '../components/SectionFullyCustomizable.ast
 import SectionAdvantages from "../components/SectionAdvantages.astro"
 import Profile from '../components/Profile.astro';
 import SectionAboutMe from '../components/SectionAboutMe.astro';
+import SectionProjects from '../components/SectionProjects.astro';
+import ProjectInfo from "../components/ProjectInfo"
+import ImagesProjects from '../components/ImagesProjects';
 ---
 
 <Layout title="Rogelio López | Web Developer | Portfolio">
 	<Header />
-	<main class="max-w-7xl mx-auto">
+	<main class="max-w-7xl mx-auto relative">
 		<ListIcons />
-		<SectionFullyCustomizable />
-		<SectionAdvantages />
 		<Profile />
 		<SectionAboutMe />
+		<SectionProjects>
+			<ImagesProjects slot='images' client:load/>
+			<ProjectInfo slot="info" client:load/>
+		</SectionProjects>
+		<SectionFullyCustomizable />
+		<SectionAdvantages />
 	</main>
 	<img class="absolute -z-10 top-0 bottom-0 left-0" src="/shadow.png" alt="shadow" />
 	<img class="absolute -z-10 top-0 bottom-0 right-0" src="/shadow2.png" alt="shadow" />
