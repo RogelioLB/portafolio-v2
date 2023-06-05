@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/react"
 import Icon from "./Icon"
-import { icons } from "../stores/iconsStroe"
+import { icons } from "../stores/iconsStore"
 
 export default function ListIcons(){
     const $icons = useStore(icons)
