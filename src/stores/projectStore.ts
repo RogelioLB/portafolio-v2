@@ -12,7 +12,7 @@ export const allProjects = atom([
     {
       name: "Studio Ghibli App",
       image: { url: "/ghibli.png", id:"ghibli"},
-      description: "This was an app created with the Studio Ghibli API. This API are hosted by myself.",
+      description: "This was an app created with the Studio Ghibli API. This API is hosted by myself.",
       demo:"https://studio-ghibli-rho.vercel.app/"
     },
     {

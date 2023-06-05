@@ -8,16 +8,18 @@ module.exports = {
         DEFAULT: '0px 4px 20px var(--tw-shadow-color)'
       },
       animation: {
-        marquee: 'marquee 25s linear infinite'
+        marquee: 'marquee 25s linear infinite',
+        updown: 'updown 3.5s ease-in-out infinite'
       },
       keyframes: {
         marquee: {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-100%)' }
         },
-        marquee2: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(0%)' }
+        updown: {
+          '0%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(30px)' },
+          '100%': { transform: 'translateY(0px)' }
         }
       }
     }
