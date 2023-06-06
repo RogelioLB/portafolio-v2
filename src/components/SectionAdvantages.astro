@@ -1,10 +1,11 @@
 ---
 import CardAdvantage from "./CardAdvantage.astro";
+import MultipleDevices from "./MultipleDevices.astro";
 
 ---
 
-<section class="px-4 py-8 flex items-center flex-col relative after:absolute after:w-64 after:aspect-square after:rounded-full after:blur-3xl after:bg-yellow-500 after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:-z-10" >
-    <img src="/devices.svg" alt="devices img" class="max-sm:w-72 w-[75%] animate-fade animate-once" />
+<section class="px-4 py-8 flex-1 flex items-center flex-col relative after:absolute after:w-64 after:aspect-square after:rounded-full after:blur-3xl after:bg-yellow-500 after:top-1/2 after:left-1/2 after:transform after:-translate-x-1/2 after:-translate-y-1/2 after:-z-10" >
+    <MultipleDevices />
     <div class="flex gap-8">
         <CardAdvantage title="Fully Responsive" text="Web page optimized for Mobile" delay="200"/>
         <CardAdvantage title="Code is yours" text="All code is of your property." delay="500"/>

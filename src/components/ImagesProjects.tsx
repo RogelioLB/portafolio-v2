@@ -63,7 +63,7 @@ export default function ImagesProjects() {
   }, []);
 
   return (
-    <div className="flex max-sm:flex-col items-center gap-12">
+    <div className="flex flex-col items-center gap-12">
       <div
         id="images"
         className="flex-shrink-0 basis-[65%] w-[80%] relative aspect-video"
@@ -80,12 +80,12 @@ export default function ImagesProjects() {
       </div>
 
       <nav className="bg-gray-800 rounded-md w-full flex justify-center">
-        <ul className="flex max-sm:flex-row flex-col w-fit rounded-md p-4 justify-between">
+        <ul className="flex flex-row w-fit rounded-md p-4 justify-between">
           {projects.map(({ name, image: { id } }) => (
             <li
               data-id={`${id}`}
               key={id}
-              className="z-10 cursor-pointer max-sm:text-xs text-md py-2 px-4"
+              className="z-10 cursor-pointer text-xs md:text-sm py-2 px-4 text-center"
             >
               {name}
             </li>

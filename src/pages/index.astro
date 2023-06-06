@@ -10,7 +10,6 @@ import SectionProjects from '../components/SectionProjects.astro';
 import ProjectInfo from "../components/ProjectInfo"
 import ImagesProjects from '../components/ImagesProjects';
 import SectionContact from '../components/SectionContact.astro';
-import SectionMultipleDevices from '../components/SectionMultipleDevices.astro'
 ---
 
 <Layout title="Rogelio López | Web Developer | Portfolio">
@@ -23,14 +22,15 @@ import SectionMultipleDevices from '../components/SectionMultipleDevices.astro'
 				<SectionAboutMe />
 			</div>
 			<SectionProjects>
-				<ImagesProjects slot='images' client:load/>
-				<ProjectInfo slot="info" client:load/>
+				<ImagesProjects slot='images' client:visible/>
+				<ProjectInfo slot="info" client:visible/>
 			</SectionProjects>
 		</div>
 		<SectionFullyCustomizable />
-		<SectionAdvantages />
-		<SectionMultipleDevices />
-		<SectionContact />
+		<div class="flex flex-col md:flex-row justify-between md:gap-4">
+			<SectionAdvantages />
+			<SectionContact />
+		</div>
 	</main>
 	<img class="absolute h-screen -z-10 top-0 bottom-0 left-0" src="/shadow.png" alt="shadow" />
 	<img class="absolute h-screen -z-10 top-0 bottom-0 right-0" src="/shadow2.png" alt="shadow" />

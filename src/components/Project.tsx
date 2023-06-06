@@ -9,7 +9,7 @@ export interface Props{
 export default function Project(props:Props){
     const {description,name,demo,repository} = props
     return (
-        <div className="flex animate-once animate-fade-down p-8 flex-col gap-4">
+        <div className="flex animate-once animate-fade-down p-8 flex-col gap-4 md:basis-96">
             <div className="p-4">
                 <h3 className="text-bold md:text-2xl">{name}</h3>
                 <p className="font-light text-sm max-sm:h-20">{description}</p>
