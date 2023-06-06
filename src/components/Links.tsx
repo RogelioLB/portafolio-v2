@@ -1,5 +1,5 @@
-import { BiBookAlt, BiHomeAlt2 } from "react-icons/bi";
-import { CgProfile } from "react-icons/cg";
+import { BiBookAlt, BiHomeAlt2 } from "react-icons/bi/index";
+import { CgProfile } from "react-icons/cg/index";
 
 export default function Links(){
     return(
