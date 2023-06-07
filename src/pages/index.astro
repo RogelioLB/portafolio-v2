@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header';
+import Header from '../components/Header.astro';
 import ListIcons from '../components/ListIcons';
 import SectionFullyCustomizable from '../components/SectionFullyCustomizable.astro';
 import SectionAdvantages from "../components/SectionAdvantages.astro"
@@ -10,6 +10,7 @@ import SectionProjects from '../components/SectionProjects.astro';
 import ProjectInfo from "../components/ProjectInfo"
 import ImagesProjects from '../components/ImagesProjects';
 import SectionContact from '../components/SectionContact.astro';
+import SectionServices from '../components/SectionServices.astro';
 ---
 
 <Layout title="Rogelio López | Web Developer | Portfolio">
@@ -22,16 +23,15 @@ import SectionContact from '../components/SectionContact.astro';
 				<SectionAboutMe />
 			</div>
 			<SectionProjects>
-				<ImagesProjects slot='images' client:visible/>
+				<ImagesProjects slot='images' client:load/>
 				<ProjectInfo slot="info" client:visible/>
 			</SectionProjects>
 		</div>
 		<SectionFullyCustomizable />
-		<div class="flex flex-col md:flex-row justify-between md:gap-4">
+		<div class="flex flex-col sm:flex-row justify-center gap-4 md:pr-4">
 			<SectionAdvantages />
-			<SectionContact />
+			<SectionServices />
 		</div>
+		<SectionContact />
 	</main>
-	<img class="absolute h-screen -z-10 top-0 bottom-0 left-0" src="/shadow.png" alt="shadow" />
-	<img class="absolute h-screen -z-10 top-0 bottom-0 right-0" src="/shadow2.png" alt="shadow" />
 </Layout>

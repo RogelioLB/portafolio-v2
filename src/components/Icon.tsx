@@ -5,8 +5,9 @@ interface IconProps{
 export default function Icon(props:IconProps){
     const {icon,alt} = props
     return (
-        <div className="bg-white rounded-full flex items-center justify-center p-4 last:mr-4">
-            <img src={icon} alt={alt} className="w-10 h-10 object-contain rounded" loading="lazy" decoding="async" />
+        <div className="bg-white w-20 gap-1 aspect-square rounded-full flex items-center justify-center last:mr-4 flex-col">
+            <img src={icon} alt={alt} className="w-7 aspect-square object-contain rounded" />
+            <h5 className="capitalize text-xs font-bold">{alt}</h5>
         </div>
     )
 }

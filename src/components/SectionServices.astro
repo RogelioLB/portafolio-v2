@@ -1,0 +1,21 @@
+---
+import Service from "../components/Service"
+import {TbSeo} from "react-icons/tb"
+import {MdOutlineDiamond} from "react-icons/md"
+import { CgPerformance } from "react-icons/cg";
+
+---
+
+<section class="text-slate-50 p-4">
+    <ul class="flex sm:flex-col sm:h-full [&>li]:flex [&>li]:flex-col sm:[&>li]:flex-row [&>li]:flex-1  [&>li]:items-center sm:[&>li]:gap-4 [&>li]:gap-2 gap-2">
+        <li>
+            <Service title="SEO Optimization" Icon={TbSeo}/>
+        </li>
+        <li>
+            <Service title="UI/UX Design" Icon={MdOutlineDiamond} />
+        </li>
+        <li>
+            <Service title="Web Performance" Icon={CgPerformance} />
+        </li>
+    </ul>
+</section>

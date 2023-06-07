@@ -3,38 +3,38 @@ import { atom } from "nanostores";
 export const icons = atom([
     {
         icon:"/tailwind.svg",
-        alt:"tailwind svg"
+        alt:"tailwind"
     },
     {
         icon:"/html.png",
-        alt:"html logo"
+        alt:"HTML"
     },
     {
         icon:"/css.png",
-        alt:"css png logo"
+        alt:"CSS"
     },
     {
         icon:"/js.png",
-        alt:"javascript logo png"
+        alt:"javaScript"
     },
     {  
         icon:"/ts.png",
-        alt:"typescript logo png"
+        alt:"typeScript"
     },
     {
         icon:"/react.png",
-        alt:"react icon png"
+        alt:"react"
     },
     {
         icon:"/mongodb.png",
-        alt:"mongo db png"
+        alt:"mongoDB"
     },
     {
         icon:"/nodejs.png",
-        alt:"nodejs logo png"
+        alt:"nodeJS"
     },
     {
         icon:"/nextjs.png",
-        alt:"nextjs icon png"
+        alt:"nextJS"
     }
 ])

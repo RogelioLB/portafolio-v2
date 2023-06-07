@@ -8,7 +8,7 @@ export default function ImagesProjects() {
 
   useEffect(() => {
     const items = document.querySelectorAll(
-      "ul li"
+      "ul#list li"
     ) as NodeListOf<HTMLLIElement>;
     const imgs = document.querySelectorAll("#images img");
     const mark = document.getElementById("mark");
@@ -80,7 +80,7 @@ export default function ImagesProjects() {
       </div>
 
       <nav className="bg-gray-800 rounded-md w-full flex justify-center">
-        <ul className="flex flex-row w-fit rounded-md p-4 justify-between">
+        <ul id="list" className="flex flex-row w-fit rounded-md p-4 justify-between">
           {projects.map(({ name, image: { id } }) => (
             <li
               data-id={`${id}`}
