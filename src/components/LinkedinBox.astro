@@ -1,8 +1,10 @@
 ---
 import Linkedin from "./Icons/Linkedin.astro";
-
+import Link from "./Link.astro";
+const profile_url = 'https://www.linkedin.com/in/rogeliolb/'
 ---
 
-<div class="bg-linkedin text-white rounded-xl p-16">
+<div class="bg-linkedin text-white rounded-xl p-16 relative">
     <Linkedin />
+    <Link href={profile_url} />
 </div>

@@ -1,0 +1,10 @@
+---
+import {HiTrendingUp} from "react-icons/hi/index"
+interface Props{
+    href:string
+}
+const {href} = Astro.props
+---
+<a href={href} target="_blank" rel="norreferer" class="bg-cardBackground rounded-full text-black flex items-center justify-center p-2 absolute bottom-2 left-2 text-2xl">
+    <HiTrendingUp />
+</a>

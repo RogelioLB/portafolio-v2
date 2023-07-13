@@ -1,0 +1,38 @@
+---
+const tecnologies = [
+    {
+        name: "tailwind",
+        url: "/tailwind.svg"
+    },
+    {
+        name: "nextjs",
+        url: "/nextjs.png"
+    },
+    {
+        name: "react",
+        url: "/react.png"
+    },
+    {
+        name: "html",
+        url: "/html.png"
+    },
+    {
+        name: "css",
+        url: "/css.png"
+    },
+    {
+        name: "javascript",
+        url: "/js.png"
+    }
+]
+---
+
+<div class="animate-marquee min-w-full flex gap-3">
+    {
+        tecnologies.map((tecnology)=>(
+            <div class="flex items-center h-14 justify-center last:mr-3">
+                <img src={tecnology.url} alt={tecnology.name} class="w-full h-full object-contain"/>
+            </div>
+        ))
+    }
+</div>

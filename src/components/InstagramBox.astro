@@ -1,8 +1,10 @@
 ---
 import Instagram from "./Icons/Instagram.astro";
-
+import Link from "./Link.astro";
+const profile_url = "https://www.instagram.com/lbrogelio/"
 ---
 
-<div class="bg-instagram text-white rounded-xl p-16">
+<div class="bg-instagram text-white rounded-xl p-16 relative">
     <Instagram />
+    <Link href={profile_url}/>
 </div>

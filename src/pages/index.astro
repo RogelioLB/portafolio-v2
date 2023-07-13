@@ -3,14 +3,23 @@ import Layout from "../layouts/Layout.astro";
 import Profile from "../components/Profile.astro"
 import LinkedinBox from "../components/LinkedinBox.astro";
 import InstagramBox from "../components/InstagramBox.astro";
+import AutoScrollBox from "../components/AutoScrollBox.astro";
 ---
 
 <Layout title="Rogelio López | Web Developer | Portfolio">
-	<div class="flex flex-col gap-3">
-		<Profile />
-		<div class="flex [&>div]:flex-1 gap-3">
-			<LinkedinBox />
-			<InstagramBox />
+	<div class="flex flex-col md:flex-row gap-3">
+		<div class="flex flex-col gap-3 basis-1/2">
+			<Profile />
+			<div class="flex [&>div]:flex-1 gap-3">
+				<LinkedinBox />
+				<InstagramBox />
+			</div>
+		</div>
+		<div class="flex gap-3 basis-1/2">
+			<div class="flex flex-col">
+				<AutoScrollBox />
+				
+			</div>
 		</div>
 	</div>
 </Layout>
