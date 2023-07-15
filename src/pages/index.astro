@@ -4,10 +4,12 @@ import Profile from "../components/Profile.astro"
 import LinkedinBox from "../components/LinkedinBox.astro";
 import InstagramBox from "../components/InstagramBox.astro";
 import AutoScrollBox from "../components/AutoScrollBox.astro";
+import CheckHowItWorks from "../components/CheckHowItWorks.astro";
+import GetInTouch from "../components/GetInTouch.astro";
 ---
 
 <Layout title="Rogelio López | Web Developer | Portfolio">
-	<div class="flex flex-col md:flex-row gap-3">
+	<div class="flex flex-col sm:flex-row gap-3">
 		<div class="flex flex-col gap-3 basis-1/2">
 			<Profile />
 			<div class="flex [&>div]:flex-1 gap-3">
@@ -15,10 +17,13 @@ import AutoScrollBox from "../components/AutoScrollBox.astro";
 				<InstagramBox />
 			</div>
 		</div>
-		<div class="flex gap-3 basis-1/2">
-			<div class="flex flex-col">
+		<div class="flex gap-3 basis-1/2 flex-col sm:flex-row">
+			<div class="flex flex-col gap-3 flex-1">
 				<AutoScrollBox />
-				
+				<CheckHowItWorks />
+			</div>
+			<div class="flex-1">
+				<GetInTouch />
 			</div>
 		</div>
 	</div>

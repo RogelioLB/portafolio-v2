@@ -1,0 +1,22 @@
+---
+import Dot from "./Dot.astro";
+
+---
+
+<div class="bg-contrast rounded-xl flex h-56 sm:h-full sm:flex-col overflow-hidden">
+    <div class="p-6 flex-1 flex flex-col justify-between gap-2">
+        <div class="flex flex-col gap-2">
+            <h3 class="font-extrabold text-2xl [text-wrap:balance;]">Check how it works</h3>
+            <div class="flex gap-1">
+                <Dot />
+                <Dot />
+                <Dot />
+                <Dot />
+            </div>
+        </div>
+        <a href="" target="_blank" class="px-7 py-3 bg-background text-white w-fit rounded-xl font-regular text-sm shadow-lg shadow-black/20">Visit</a>
+    </div>
+    <div class="relative flex-1">
+        <img src="/infojobs.png" alt="infojobs project" class="absolute h-60 -bottom-1/2 right-6 rounded-xl sm:top-8 sm:left-1/2 sm:-translate-x-1/2" />
+    </div>
+</div>

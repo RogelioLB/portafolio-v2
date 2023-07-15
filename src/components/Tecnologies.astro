@@ -27,11 +27,11 @@ const tecnologies = [
 ]
 ---
 
-<div class="animate-marquee min-w-full flex gap-3">
+<div class="animate-marquee min-w-full flex gap-3 shrink-0">
     {
         tecnologies.map((tecnology)=>(
-            <div class="flex items-center h-14 justify-center last:mr-3">
-                <img src={tecnology.url} alt={tecnology.name} class="w-full h-full object-contain"/>
+            <div class="flex items-center justify-center last:mr-3">
+                <img src={tecnology.url} alt={tecnology.name} class="w-12 aspect-square object-contain"/>
             </div>
         ))
     }

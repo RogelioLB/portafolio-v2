@@ -22,7 +22,9 @@ module.exports = {
       colors: {
         background: '#111318',
         cardBackground: '#F9F8F6',
-        linkedin: '#0A66C2'
+        linkedin: '#0A66C2',
+        contrast: '#E8E4EC',
+        circle: '#D9D9D9'
       },
       backgroundImage: {
         instagram: 'radial-gradient(147.19% 128.80% at 0% 100.00%, #FDF497 0%, #FDF497 9.14%, #FD5949 40.71%, #D6249F 64.53%, #285AEB 100%)'
